@@ -14,8 +14,7 @@ import AdminDashboard from './pages/AdminDashboard'
 import Profile from './pages/Profile'
 import AddCar from './pages/AddCar'
 import ListCar from './pages/ListCar'
-import PaymentSuccess from './components/PaymentSuccess'
-import PaymentFail from './components/paymentFail'
+
 import Payment from './pages/Payment'
 
 
@@ -43,8 +42,7 @@ function App() {
 
             <Route path='/addcar' element={<AddCar/>}/>
             <Route path='/listcar' element={<ListCar/>}/>
-            <Route path='/success' element={<PaymentSuccess/>}/>
-            <Route path='/fail' element={<PaymentFail/>}/>
+            
             <Route path='/payment' element={<Payment/>}/>
 
 
