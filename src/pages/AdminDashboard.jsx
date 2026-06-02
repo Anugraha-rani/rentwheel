@@ -19,12 +19,23 @@ function AdminDashboard() {
   useEffect(()=>{
      getAllBookings()
     },[])
-  
+  useEffect(()=>{
+if (
+      sessionStorage.getItem("token") &&
+      sessionStorage.getItem("user")
+    ) {
+      const user = JSON.parse(
+        sessionStorage.getItem("user")
+      );
+
+      setDp(user.picture);
+    }
+  },[])
     const getAllBookings = async()=>{
       const result = await allBookingsAPI()
       setAllBookings(result.data)
     }
-    console.log(allBookings)
+   
 
 
     const totalPaidAmount = allBookings.reduce((acc, item) => {
@@ -41,11 +52,7 @@ function AdminDashboard() {
   return acc + (amount || 0);
 }, 0);
 
- sessionStorage.getItem("token") && sessionStorage.getItem("user")
-        
-        const user = JSON.parse(sessionStorage.getItem("user"))
-        
-        setDp(user.picture)
+ 
 
 
   

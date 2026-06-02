@@ -35,17 +35,17 @@ const [showUpdateProfile, setShowUpdateProfile] = useState(false)
                         if(sessionStorage.getItem("user")){
                             const user = JSON.parse(sessionStorage.getItem("user"))
                             setUserDeatils({...userDetails,username:user.username,role:user.role,id:user._id})
-                            setExistingPicture(user.picture)
+                            setExistingPicture(user?.picture)
                         }
                     },[])
     
-                    useEffect(()=>{
-                        if(sessionStorage.getItem("token") && sessionStorage.getItem("user")){
-                            const user = JSON.parse(sessionStorage.getItem("user"))
-                            setDp(user?.picture)
+              useEffect(()=>{
+                  if(sessionStorage.getItem("token") && sessionStorage.getItem("user")){
+                    const user = JSON.parse(sessionStorage.getItem("user"))
+                    setDp(user?.picture)
                             setUsername(user?.username)
                         }
-                    })
+                    },[])
                     
 const checkPasswordMatch = (data)=>{
   setUserDeatils({...userDetails,cPassword:data})

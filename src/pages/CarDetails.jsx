@@ -302,7 +302,7 @@ console.log(typeof carDetails?.isAvailable)
 
           <div className="border-t border-gray-200 flex items-center gap-2 px-3 py-2 text-sm text-gray-600">
             <MdOutlineMail className="text-green-500" />
-            <span>contact@auroramotors.com</span>
+            <span>{`contact@${carDetails?.agency}.com`}</span>
           </div>
         </div>
 

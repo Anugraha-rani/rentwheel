@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'http://localhost:3000'
+export const API_BASE_URL = 'https://carrentalbackend-49fi.onrender.com'
 
 export const getCarImageUrl = (filename) =>
   filename ? `${API_BASE_URL}/uploads/${filename}` : null
