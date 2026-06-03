@@ -17,6 +17,7 @@ import ListCar from './pages/ListCar'
 
 import Payment from './pages/Payment'
 import Edit from './pages/Edit'
+import AddProfile from './pages/AddProfile'
 
 
 
@@ -45,8 +46,8 @@ function App() {
             <Route path='/listcar' element={<ListCar/>}/>
             
             <Route path='/payment' element={<Payment/>}/>
-            <Route path='edit' element={<Edit/>}/>
-
+            <Route path='/edit' element={<Edit/>}/>
+<Route path='/add' element={<AddProfile/>}/>
 
 
 
