@@ -17,7 +17,7 @@ import ListCar from './pages/ListCar'
 
 import Payment from './pages/Payment'
 import Edit from './pages/Edit'
-import AddProfile from './pages/AddProfile'
+
 
 
 
