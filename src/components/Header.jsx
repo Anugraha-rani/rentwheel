@@ -9,7 +9,7 @@ import Profile from '../pages/Profile';
 import axiosInstance from '../api/axiosInstance';
 import MyBooking from '../pages/MyBooking';
 import { FaCar } from "react-icons/fa";
-
+import toast, { Toaster } from "react-hot-toast";
 
 
 
@@ -67,13 +67,14 @@ const handleLogout = () => {
   setRole("");
 
   setDropDown(false);
-
+  toast.success("Successfully logged out")
   navigate("/")
 }
 
 
 
   return (
+    <>
     <section className=' px-1 shadow-lg'>
       <div>
 <div className='flex items-center justify-center flex-between px-10'>
@@ -194,6 +195,8 @@ const handleLogout = () => {
   user={JSON.parse(sessionStorage.getItem("user"))}
 />
     </section>
+    <Toaster position="top-center" />
+    </>
   )
 }
 

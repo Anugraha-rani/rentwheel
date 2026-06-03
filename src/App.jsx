@@ -17,6 +17,7 @@ import ListCar from './pages/ListCar'
 
 import Payment from './pages/Payment'
 import Edit from './pages/Edit'
+import GetDetails from './pages/GetDetails'
 
 
 
@@ -47,7 +48,7 @@ function App() {
             
             <Route path='/payment' element={<Payment/>}/>
             <Route path='/edit' element={<Edit/>}/>
-
+<Route path='/getdetails' element={<GetDetails/>}/>
 
 
 

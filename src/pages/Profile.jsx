@@ -17,7 +17,7 @@ const [showUpdateProfile, setShowUpdateProfile] = useState(false)
     const[dp,setDp] = useState("")
         const[username,setUsername] = useState("")
         const [userDetails,setUserDeatils] = useState({
-            username:"",password:"",cPassword:"",picture:"",role:"",id:"",phone:"",address:"",idType:"",idNumber:""
+            username:"",password:"",cPassword:"",picture:"",role:"",id:"",
         })
         const [preview,setPreview] = useState("")
             const[imageFileType,setImageFileType] = useState(false)
@@ -34,7 +34,7 @@ const [showUpdateProfile, setShowUpdateProfile] = useState(false)
     useEffect(()=>{
             if(sessionStorage.getItem("user")){
             const user = JSON.parse(sessionStorage.getItem("user"))
-    setUserDeatils({...userDetails,username:user.username,role:user.role,id:user._id,phone:user.phone,address:user.address ,idType:user.idType ,idNumber:user.idNumber })
+    setUserDeatils({...userDetails,username:user.username,role:user.role,id:user._id, })
       setExistingPicture(user?.picture)}},[])
     
               useEffect(()=>{
@@ -253,81 +253,7 @@ if (!show) return null;
                   className="w-full mt-1 border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-gray-300"
                   placeholder="Enter username"
                 />
-                <div>
-  <label className="text-sm text-gray-600">
-    Phone
-  </label>
-
-  <input
-    type="text"
-    value={userDetails.phone}
-    onChange={(e)=>
-      setUserDeatils({
-        ...userDetails,
-        phone:e.target.value})}
-    className="w-full mt-1 border rounded-lg px-3 py-2"
-    placeholder="Enter phone number" required
-  />
-</div>
-
-<div>
-  <label className="text-sm text-gray-600">
-    Address
-  </label>
-
-  <textarea
-    value={userDetails.address}
-    onChange={(e)=>
-      setUserDeatils({
-        ...userDetails,
-        address:e.target.value
-      })
-    }
-    className="w-full mt-1 border rounded-lg px-3 py-2"
-    placeholder="Enter address" required
-  />
-</div>
-
-<div>
-  <label className="text-sm text-gray-600">
-    ID Type
-  </label>
-
-  <select
-    value={userDetails.idType}
-    onChange={(e)=>
-      setUserDeatils({
-        ...userDetails,
-        idType:e.target.value
-      })
-    }
-    className="w-full mt-1 border rounded-lg px-3 py-2" 
-  >
-    <option value="">Select ID Type</option>
-    <option value="Aadhar">Aadhar</option>
-    <option value="Passport">Passport</option>
-    <option value="Driving License">Driving License</option>
-  </select>
-</div>
-
-<div>
-  <label className="text-sm text-gray-600">
-    ID Number
-  </label>
-
-  <input
-    type="text"
-    value={userDetails.idNumber}
-    onChange={(e)=>
-      setUserDeatils({
-        ...userDetails,
-        idNumber:e.target.value
-      })
-    }
-    className="w-full mt-1 border rounded-lg px-3 py-2"
-    placeholder="Enter ID Number" required
-  />
-</div>
+  
 
 <div className="relative">
   <label className="text-sm text-gray-600">Password</label>

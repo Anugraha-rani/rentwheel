@@ -83,7 +83,7 @@ const formik = useFormik({
          if(result.data.user.role=="admin"){
           navigate('/admin')
          }else{
-          navigate(`/profile/${result.data._id}`)
+          navigate(`/getdetails`)
          }
        }else {
         toast.error("Invalid email/password")
