@@ -16,6 +16,7 @@ import AddCar from './pages/AddCar'
 import ListCar from './pages/ListCar'
 
 import Payment from './pages/Payment'
+import Edit from './pages/Edit'
 
 
 
@@ -44,6 +45,7 @@ function App() {
             <Route path='/listcar' element={<ListCar/>}/>
             
             <Route path='/payment' element={<Payment/>}/>
+            <Route path='edit' element={<Edit/>}/>
 
 
 

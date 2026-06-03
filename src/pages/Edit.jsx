@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 function Edit() {
     const [showUpdateProfile, setShowUpdateProfile] = useState(false)
     const[dp,setDp] = useState("")
         const[username,setUsername] = useState("")
         const [userDetails,setUserDeatils] = useState({
-            username:"",picture:"",role:"",id:""
+            username:"",picture:"",role:"",id:"",address: "",phone: "",idType: "",idNumber: ""
         })
         const [preview,setPreview] = useState("")
             const[imageFileType,setImageFileType] = useState(false)
@@ -15,7 +16,7 @@ function Edit() {
                 useEffect(()=>{
                     if(sessionStorage.getItem("user")){
                         const user = JSON.parse(sessionStorage.getItem("user"))
-                        setUserDeatils({...userDetails,username:user.username,role:user.role,id:user._id})
+                        setUserDeatils({...userDetails,username:user.username,role:user.role,id:user._id,address: user.address, phone: user.phone , idType: user.idType , idNumber: user.idNumber })
                         setExistingPicture(user.picture)
                     }
                 },[])
@@ -42,7 +43,7 @@ function Edit() {
                   
                 }
                 const handleUserUpdate=async()=>{
-  const{username,picture,role,id}=userDetails
+  const{username,picture,role,id,address,phone,idType,idNumber}=userDetails
   if(!username){
      toast.error("Please fill the form completely")
   }else{
@@ -94,15 +95,7 @@ function Edit() {
                     }
                     </label>
         
-        {/* Avatar */}
-        {/* <img
-                  src={
-                    dp ||
-                    "https://as1.ftcdn.net/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
-                  }
-                  alt=""
-                  className="w-16 h-16 rounded-full object-cover"
-                /> */}
+        
 
         <div>
           <label className="cursor-pointer text-blue-600">
@@ -116,7 +109,7 @@ function Edit() {
       </div>
 
       {/* Form */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <form className="grid grid-cols-2 gap-4 mb-6">
         
         <div className="mb-6">
                 <label className="text-sm text-gray-600">
@@ -131,9 +124,88 @@ function Edit() {
                   placeholder="Enter username"
                 />
               </div>
+         <div>
+    <label className="text-sm text-gray-600">
+      Phone
+    </label>
+
+    <input
+      type="text"
+      value={userDetails.phone}
+      onChange={(e) =>
+        setUserDeatils({
+          ...userDetails,
+          phone: e.target.value
+        })
+      }
+      className="w-full mt-1 border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-gray-300"
+      placeholder="Enter phone number"
+    />
+  </div>
+   <div>
+    <label className="text-sm text-gray-600">
+      Address
+    </label>
+
+    <textarea
+      value={userDetails.address}
+      onChange={(e) =>
+        setUserDeatils({
+          ...userDetails,
+          address: e.target.value
+        })
+      }
+      className="w-full mt-1 border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-gray-300"
+      placeholder="Enter address"
+      rows="3"
+    />
+  </div>
+   <div>
+    <label className="text-sm text-gray-600">
+      ID Type
+    </label>
+
+    <select
+      value={userDetails.idType}
+      onChange={(e) =>
+        setUserDeatils({
+          ...userDetails,
+          idType: e.target.value
+        })
+      }
+      className="w-full mt-1 border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-gray-300"
+    >
+      <option value="">Select ID Type</option>
+      <option value="Aadhar">Aadhar</option>
+      <option value="Passport">Passport</option>
+      <option value="Driving License">Driving License</option>
+      <option value="PAN">PAN</option>
+    </select>
+     </div>
+
+  {/* ID Number */}
+  <div>
+    <label className="text-sm text-gray-600">
+      ID Number
+    </label>
+
+    <input
+      type="text"
+      value={userDetails.idNumber}
+      onChange={(e) =>
+        setUserDeatils({
+          ...userDetails,
+          idNumber: e.target.value
+        })
+      }
+      className="w-full mt-1 border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-gray-300"
+      placeholder="Enter ID number"
+    />
+  </div>
+
 
         
-      </div>
+      </form>
 
       {/* Footer Buttons */}
       <div className="flex justify-end gap-3">
