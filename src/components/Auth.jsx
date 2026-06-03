@@ -79,10 +79,11 @@ const formik = useFormik({
         toast.success("Login successful!!!")
         sessionStorage.setItem("token",result.data.token)
          sessionStorage.setItem("user",JSON.stringify(result.data.user))
+
          if(result.data.user.role=="admin"){
           navigate('/admin')
          }else{
-          navigate('/add')
+          navigate(`/profile/${result.data._id}`)
          }
        }else {
         toast.error("Invalid email/password")

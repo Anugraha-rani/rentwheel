@@ -47,7 +47,7 @@ function App() {
             
             <Route path='/payment' element={<Payment/>}/>
             <Route path='/edit' element={<Edit/>}/>
-<Route path='/add' element={<AddProfile/>}/>
+
 
 
 
