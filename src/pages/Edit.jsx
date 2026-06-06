@@ -61,7 +61,7 @@ function Edit() {
   if(result.status==200){
     toast.success("User profile updated successfully")
     setTimeout(()=>{
-      sessionStorage.clear()
+      
       navigate('/login')
     },2500)
 
