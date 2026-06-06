@@ -83,7 +83,7 @@ const checkPasswordMatch = (data)=>{
         toast.success("User profile updated successfully")
         setTimeout(()=>{
           sessionStorage.clear()
-          navigate('/')
+          navigate('/login')
         },2500)
     
       }
