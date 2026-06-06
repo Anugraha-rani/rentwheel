@@ -211,14 +211,14 @@ function Edit() {
 
       {/* Footer Buttons */}
       <div className="flex justify-end gap-3">
-        <button
+        <button type='button'
           onClick={() => setShowUpdateProfile(false)}
           className="px-4 py-2 text-sm rounded-lg hover:bg-gray-100"
         >
           Cancel
         </button>
 
-        <button  onClick={handleUserUpdate} className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-gray-400">
+        <button type='button'  onClick={handleUserUpdate} className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-gray-400">
           Save
         </button>
       </div>

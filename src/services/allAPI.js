@@ -55,6 +55,10 @@ export const userEditAPI = async(userId,userData)=>{
     return await apiService("PUT",`/edituser/${userId}`,userData)
 }
 
+export const userDetailsUpdateAPI = async(userId,userData)=>{
+    return await apiService("PUT",`/extradetails/${userId}`,userData)
+}
+
 export const myBookingsAPI=async(userId,reqBody)=>{
     return await apiService("GET",`/mybookings/${userId}`,{})
 }

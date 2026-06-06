@@ -82,9 +82,15 @@ const formik = useFormik({
 
          if(result.data.user.role=="admin"){
           navigate('/admin')
-         }else{
-          navigate(`/getdetails`)
-         }
+         }else if (result.data.user.profileCompleted !=true) {
+     
+      navigate("/getdetails")
+    } 
+    else {
+     
+      navigate("/")
+    }
+
        }else {
         toast.error("Invalid email/password")
        }
@@ -104,9 +110,16 @@ if(result.status==200){
   setTimeout(()=>{
     if(result.data.user.role=="admin"){
       navigate('/admin') 
-    }else{
-       navigate('/')
     }
+    else if (result.data.user.profileCompleted !=true) {
+     
+      navigate("/getdetails")
+    } 
+    else {
+     
+      navigate("/")
+    }
+
   },2500)
 }
 
