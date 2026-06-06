@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from 'react-router-dom';
+
 
 function Edit() {
+  const navigate = useNavigate()
     const [showUpdateProfile, setShowUpdateProfile] = useState(false)
     const[dp,setDp] = useState("")
         const[username,setUsername] = useState("")
@@ -61,7 +64,6 @@ function Edit() {
   if(result.status==200){
     toast.success("User profile updated successfully")
     setTimeout(()=>{
-      
       navigate('/login')
     },2500)
 
