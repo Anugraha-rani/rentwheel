@@ -15,19 +15,19 @@ import { useNavigate } from "react-router-dom";
     const bgColor = colors[parseInt(car._id?.slice(-4) || "0" , 16)% colors.length]
     const id = car._id
   return (
-    <div onClick={()=>navigate(`/details/${id}`)} style={{background:bgColor}} className='block rounded-lg ring-1 ring-slate-900/5 p-5 cursor-pointer h-110'>
+    <div onClick={()=>navigate(`/details/${id}`)} style={{background:bgColor}} className='block rounded-lg ring-1 ring-slate-900/5 p-4 sm:p-5 cursor-pointer h-auto min-h-96'>
 
-      <h3 className="font-bold text-lg">
+      <h3 className="font-bold text-base sm:text-lg line-clamp-1">
        {car.title}
       </h3>
-     <div className="flex justify-between mt-2">
+     <div className="flex flex-col sm:flex-row sm:justify-between gap-1 mt-2">
       <div>
 <p className="text-gray-500 text-sm">
       {car?.bodyType}
       
       </p>
       </div>
-      <div>
+      <div className="text-sm">
 <span className="font-bold text-blue-600">
       {currency}  {car?.priceSale}
         </span> <span className="text-bold text-blue-600">|</span>
@@ -44,23 +44,23 @@ import { useNavigate } from "react-router-dom";
       />
 
       
-      <div className='flex justify-evenly items-center py-2 text-gray-600'>
-                  <p className='flex flex-col items-center gap-1 font-semibold'>
+      <div className='flex flex-wrap justify-evenly items-center py-2 text-gray-600 gap-2'>
+                  <p className='flex flex-col items-center gap-1 font-semibold text-xs sm:text-sm'>
                       <FaCog size={20} />
                       {car?.transmission}
                   </p>
-                 <div className='w-px h-10 bg-gray-600'></div>
-                  <p className='flex flex-col items-center gap-1 font-semibold'>
+                 <div className='hidden sm:block w-px h-10 bg-gray-600'></div>
+                  <p className='flex flex-col items-center gap-1 font-semibold text-xs sm:text-sm'>
                       <GiCarSeat size={20}/>
                       {car?.seats}
                   </p>
-                 <div className='w-px h-10 bg-gray-600'></div>
-                  <p className='flex flex-col items-center gap-1 font-semibold'>
+                 <div className='hidden sm:block w-px h-10 bg-gray-600'></div>
+                  <p className='flex flex-col items-center gap-1 font-semibold text-xs sm:text-sm'>
                       <FaGasPump  size={20}/>
                       {car?.fuelType}
                   </p>
-                  <div className='w-px h-10 bg-gray-600'></div>
-                  <p className='flex flex-col items-center gap-1 font-semibold'>
+                  <div className='hidden sm:block w-px h-10 bg-gray-600'></div>
+                  <p className='flex flex-col items-center gap-1 font-semibold text-xs sm:text-sm'>
                       <FaTachometerAlt  size={20}/>
                       {car?.odometer}
                   </p>

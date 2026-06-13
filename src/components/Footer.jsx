@@ -11,11 +11,11 @@ function Footer() {
   return (
     <section className='mt-10'>
 
-    <div className=' bg-gray-100 px-20 py-6'>
-    <div className='grid grid-cols-4 gap-3 inset-x-0 '>
+    <div className='bg-gray-100 px-4 sm:px-8 lg:px-20 py-6'>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-3'>
         <div>
           <Link><img src={logos} alt="" width={'80px'} height={'80px'} /></Link>
-          <p className='text-gray-600 px-2'>Find reliable cars with transparent pricing, verified inspections, flexible pickup and delivery options and 24/7 customer support.</p>
+          <p className='text-gray-600 px-2 mt-3'>Find reliable cars with transparent pricing, verified inspections, flexible pickup and delivery options and 24/7 customer support.</p>
           <div className='flex items-center gap-5 mt-4'>
             <FiFacebook className='text-xl'/>
             <FaInstagram className='text-xl'/>
@@ -23,7 +23,7 @@ function Footer() {
               <LuLinkedin className='text-xl'/>
           </div>
           </div>  
-          <div className='mt-15 ms-20'>
+          <div className='sm:mt-0 mt-4'>
             <p className='text-xl font-bold'>COMPANY</p>
             <div className='flex flex-col leading-loose mt-3 text-gray-600'>
             <Link>About</Link>
@@ -33,7 +33,7 @@ function Footer() {
             <Link>Partners</Link>
             </div>
           </div>
-           <div className='mt-15'>
+           <div className='sm:mt-0 mt-4'>
             <p className='text-xl font-bold'>SUPPORT</p>
             <div className='flex flex-col leading-loose mt-3 text-gray-600'>
             <Link>Help Center</Link>
@@ -44,11 +44,11 @@ function Footer() {
             </div>
              
           </div>
-          <div className='mt-15'>
+          <div className='sm:mt-0 mt-4'>
             <p className='text-xl font-bold'>STAY UPDATED</p>
             <p className='mt-5 text-gray-600'>Subscribe to our newsletter for inspiration and special offers.</p>
             <div className="mt-5">
-  <div className="relative w-fit">
+  <div className="relative w-full max-w-sm">
     <input
       type="text"
       placeholder="Your email"
@@ -62,14 +62,14 @@ function Footer() {
 </div>
           </div>
     </div>
-    <div className='text-gray-600 flex justify-between'>
+    <div className='text-gray-600 flex flex-col sm:flex-row justify-between items-center gap-4 mt-10 sm:mt-20'>
       <div>
-    <p className='mt-20'>&copy; 2026 Rentwheels. All rights reserved.</p>
+    <p className='text-center sm:text-left'>&copy; 2026 Rentwheels. All rights reserved.</p>
     </div>
-    <div className='mt-20'>
+    <div className='flex flex-wrap justify-center gap-4 sm:gap-0'>
       <Link>Privacy</Link>
-      <Link className='ms-5'>Terms</Link>
-      <Link className='ms-5'>Sitemap</Link>
+      <Link className='sm:ms-5'>Terms</Link>
+      <Link className='sm:ms-5'>Sitemap</Link>
     </div>
     </div>
     </div>

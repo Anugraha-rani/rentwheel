@@ -80,7 +80,7 @@ import React, { useState } from "react";
 ];
   return (
     
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-gray-100 p-4 sm:p-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {blogs.map((blog) => (
           <div

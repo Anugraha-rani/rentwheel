@@ -31,8 +31,8 @@ function MyBooking() {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen p-6">
-      <div className="bg-white rounded-xl shadow-sm p-5">
+    <div className="bg-gray-100 min-h-screen p-4 sm:p-6">
+      <div className="bg-white rounded-xl shadow-sm p-4 sm:p-5">
 
         {bookings?.length > 0 ? (
           bookings.map((booking) => {
@@ -50,16 +50,16 @@ function MyBooking() {
             return (
               <div
                 key={booking._id}
-                className="border rounded-lg mb-4 p-4 flex justify-between items-center"
+                className="border rounded-lg mb-4 p-4 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4"
               >
                 {/* Left Section */}
-                <div className="flex gap-4 items-center">
+                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                   <img 
                     src={getCarImageUrl(
                       booking?.carId?.images?.[0]
                     )}
                     alt="car"
-                    className="w-36 h-20 object-fill rounded-lg"
+                    className="w-full sm:w-36 h-32 sm:h-20 object-cover rounded-lg"
                   />
 
                   <div>
@@ -85,7 +85,7 @@ function MyBooking() {
                       {booking?.carId?.address}
                     </p>
 
-                    <div className="md:flex gap-6 mt-3 text-sm">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 mt-3 text-sm">
                       <p>
                         <span className="font-semibold">
                           Booking ID:
@@ -111,8 +111,8 @@ function MyBooking() {
                 </div>
 
                 {/* Right Section */}
-                <div className="flex flex-col items-end gap-2">
-                  <div className="flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-start sm:items-end gap-2 w-full lg:w-auto">
+                  <div className="flex flex-wrap items-center gap-3">
 
                     <div>
                       <span className="font-medium">

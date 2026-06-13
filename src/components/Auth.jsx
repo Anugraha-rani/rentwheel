@@ -130,10 +130,10 @@ if(result.status==200){
   return (
     <>
     
-    <div className='w-full min-h-screen flex justify-center items-center '>
-        <div className='p-10'>
-        <div style={{width:'400px'}} className='p-5 bg-gray-100 flex justify-center items-center flex-col my-5'>
-         <div style={{width:'80px',height:'80px',borderRadius:'50%'}} className='border mb-5 flex justify-center items-center'>
+    <div className='w-full min-h-screen flex justify-center items-center px-4'>
+        <div className='p-4 sm:p-10 w-full max-w-md'>
+        <div className='w-full p-5 bg-gray-100 flex justify-center items-center flex-col my-5'>
+         <div className='w-20 h-20 rounded-full border mb-5 flex justify-center items-center'>
           <FaUser className='text-3xl'/>
          </div>
          <h1 className='text-2xl'>{insideRegister?"Register":"Login"}</h1>

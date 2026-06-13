@@ -73,7 +73,7 @@ if (sortOrder === "lowToHigh") {
 
   return (
     <>
-    <div className=" mx-auto px-8 py-4 bg-gray-100 ">
+    <div className="mx-auto px-4 sm:px-8 py-4 bg-gray-100">
       <div className="grid lg:grid-cols-[250px_1fr] gap-6">
 
         <SideBar selectedTypes={selectedTypes}

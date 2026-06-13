@@ -113,9 +113,22 @@ const handleSubmit = async()=>{
 }
 
   return (
-    <div className="flex min-h-screen bg-[#f5f7fb]">
+    <div className="flex flex-col md:flex-row min-h-screen bg-[#f5f7fb]">
+
+      {/* Mobile Nav */}
+      <div className="md:hidden flex overflow-x-auto bg-white shadow-md shrink-0">
+        <NavLink to="/admin" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+          <FaTachometerAlt /> Dashboard
+        </NavLink>
+        <NavLink to="/addcar" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+          <FaCar /> Add Car
+        </NavLink>
+        <NavLink to="/listcar" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+          <FaList /> List Car
+        </NavLink>
+      </div>
      
-      <div className="w-64 bg-white shadow-md flex flex-col justify-between">
+      <div className="hidden md:flex w-64 bg-white shadow-md flex-col justify-between shrink-0">
         <div>
           {/* Logo */}
           <div className="p-6 border-b flex items-center justify-center">
@@ -180,17 +193,17 @@ const handleSubmit = async()=>{
       </div>
 
       {/* main part */}
-      <div className="flex-1 p-8 overflow-y-auto">
+      <div className="flex-1 p-4 sm:p-8 overflow-y-auto min-w-0">
         {/* Header */}
-        <div className="flex items-center gap-3 mb-8">
-          <FaCar className="text-3xl text-cyan-600" />
-          <h1 className="text-3xl font-bold text-gray-800">
+        <div className="flex items-center gap-3 mb-6 sm:mb-8">
+          <FaCar className="text-2xl sm:text-3xl text-cyan-600" />
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
             Add New Car
           </h1>
         </div>
 
         {/* Form Container */}
-        <div className="bg-white rounded-2xl shadow-sm p-8">
+        <div className="bg-white rounded-2xl shadow-sm p-4 sm:p-8">
           <div className="mb-5">
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Agency
@@ -335,7 +348,7 @@ onChange={handleChange}
           </div>
 
           {/* Price Section */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-5 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 mb-6">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Rent Price / day

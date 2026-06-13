@@ -50,9 +50,22 @@ function ListCar() {
   
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
+      {/* Mobile Nav */}
+      <div className="md:hidden flex overflow-x-auto bg-white shadow-md shrink-0">
+        <NavLink to="/admin" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+          <FaTachometerAlt /> Dashboard
+        </NavLink>
+        <NavLink to="/addcar" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+          <FaCar /> Add Car
+        </NavLink>
+        <NavLink to="/listcar" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+          <FaList /> List Car
+        </NavLink>
+      </div>
+
       {/* Sidebar */}
-      <div className="w-64 bg-white shadow-md flex flex-col justify-between">
+      <div className="hidden md:flex w-64 bg-white shadow-md flex-col justify-between shrink-0">
         <div>
           {/* Logo */}
           <div className="p-6 border-b flex items-center justify-center">
@@ -117,10 +130,10 @@ function ListCar() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-8 overflow-x-auto">
-        <div className="bg-white rounded-xl shadow-md overflow-hidden">
+      <div className="flex-1 p-4 sm:p-8 overflow-x-auto min-w-0">
+        <div className="bg-white rounded-xl shadow-md overflow-x-auto">
           {/* Table Header */}
-          <div className="bg-cyan-500 text-white grid grid-cols-5 px-6 py-4 font-semibold text-sm">
+          <div className="bg-cyan-500 text-white grid grid-cols-5 min-w-[600px] px-4 sm:px-6 py-4 font-semibold text-sm">
             <p>Index</p>
             <p>Name</p>
             <p>Address</p>
@@ -132,7 +145,7 @@ function ListCar() {
          {allCars?.map((item,index)=>(
             <div
               key={item?.id}
-              className="grid grid-cols-5 items-center px-6 py-4 border-b text-sm hover:bg-gray-50 transition"
+              className="grid grid-cols-5 min-w-[600px] items-center px-4 sm:px-6 py-4 border-b text-sm hover:bg-gray-50 transition"
             >
               {/* Index */}
               <p className="text-gray-600">{index+1}</p>

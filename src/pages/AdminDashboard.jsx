@@ -59,8 +59,21 @@ if (
 
   return (
     <div>
-<div className="flex min-h-screen bg-gray-100">
-  <div className="w-64 bg-white shadow-md flex flex-col justify-between">
+<div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
+  {/* Mobile Nav */}
+  <div className="md:hidden flex overflow-x-auto bg-white shadow-md shrink-0">
+    <NavLink to="/admin" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+      <FaTachometerAlt /> Dashboard
+    </NavLink>
+    <NavLink to="/addcar" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+      <FaCar /> Add Car
+    </NavLink>
+    <NavLink to="/listcar" className={({ isActive }) => `flex items-center gap-2 px-4 py-3 whitespace-nowrap text-sm ${isActive ? "text-cyan-600 border-b-2 border-cyan-500 font-medium" : "text-gray-600"}`}>
+      <FaList /> List Car
+    </NavLink>
+  </div>
+
+  <div className="hidden md:flex w-64 bg-white shadow-md flex-col justify-between shrink-0">
       {/* Sidebar */}
       <div>
                 {/* Logo */}
@@ -125,9 +138,9 @@ if (
 
 
       {/* Main Content */}
-      <div className="flex-1 p-6">
+      <div className="flex-1 p-4 sm:p-6 min-w-0">
         {/* Top Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {/* Sales Card */}
           <div className="bg-blue-50 rounded-xl p-5 flex items-center gap-4 shadow-sm">
             <div className="bg-white p-4 rounded-full shadow">
@@ -153,8 +166,8 @@ if (
           </div>
         </div>
 {/* Table */}
-        <div className="mt-8 bg-white rounded-xl shadow-sm overflow-hidden">
-          <table className="w-full">
+        <div className="mt-6 sm:mt-8 bg-white rounded-xl shadow-sm overflow-x-auto">
+          <table className="w-full min-w-[640px]">
             <thead className="bg-cyan-500 text-white">
               <tr>
                 <th className="text-left px-6 py-4">Index</th>

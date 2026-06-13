@@ -69,14 +69,14 @@ function FeaturedCars() {
 
 
   return (
-    <section className='px-10 py-5 '>
+    <section className='px-4 sm:px-6 lg:px-10 py-5'>
       <div>
-        <p ref={fourthText} className='text-blue-600 font-bold text-2xl'>Your Next Car Awaits</p>
-        <p ref={fifthText} className='text-5xl font-bold mt-3'>Start Driving With Ease</p>
+        <p ref={fourthText} className='text-blue-600 font-bold text-lg sm:text-2xl'>Your Next Car Awaits</p>
+        <p ref={fifthText} className='text-2xl sm:text-3xl lg:text-5xl font-bold mt-3'>Start Driving With Ease</p>
         </div>
-        <div className='flex justify-between'>
-          <p className='font-bold mt-10'>Displaying 1-8 from 3k listings</p>
-        <Link to={'/lists'} className='text-blue-600 text-2xl mt-10'><FaListAlt /></Link>
+        <div className='flex flex-col sm:flex-row sm:justify-between gap-2'>
+          <p className='font-bold mt-6 sm:mt-10 text-sm sm:text-base'>Displaying 1-8 from 3k listings</p>
+        <Link to={'/lists'} className='text-blue-600 text-2xl mt-2 sm:mt-10'><FaListAlt /></Link>
         </div>
      
       {/* container */}
@@ -88,6 +88,10 @@ function FeaturedCars() {
           disableOnInteraction: false,
         }}
         breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
           600:{
             slidesPerView:2,
             spaceBetween:30,

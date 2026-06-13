@@ -90,9 +90,9 @@ function Review() {
 ];
 
   return (
-    <div className='px-10 py-15'>
-        <p ref={fourthText} className='text-blue-600 font-bold text-2xl'>What People Says</p>
-        <p ref={fifthText} className='text-5xl font-bold mt-3'>Don't Just Take Our Words</p>
+    <div className='px-4 sm:px-6 lg:px-10 py-8 sm:py-15'>
+        <p ref={fourthText} className='text-blue-600 font-bold text-lg sm:text-2xl'>What People Says</p>
+        <p ref={fifthText} className='text-2xl sm:text-3xl lg:text-5xl font-bold mt-3'>Don't Just Take Our Words</p>
        <Swiper
         autoplay={{
           delay: 3500,
@@ -117,7 +117,7 @@ function Review() {
       >
         {reviews.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-gray-100 rounded-2xl p-6 shadow-lg  h-[210px] flex flex-col justify-between">
+            <div className="bg-gray-100 rounded-2xl p-4 sm:p-6 shadow-lg min-h-[210px] h-auto flex flex-col justify-between">
               
               
               <div className="flex gap-1  items-center justify-between">

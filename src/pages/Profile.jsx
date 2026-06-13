@@ -105,11 +105,11 @@ if (!show) return null;
     <div className="fixed inset-0 bg-black/40 z-50 flex justify-center items-center">
       <div
         ref={modalRef}
-        className="bg-white w-[90%] md:w-[750px] rounded-xl shadow-xl overflow-hidden"
+        className="bg-white w-[95%] max-w-[750px] rounded-xl shadow-xl overflow-hidden max-h-[90vh] overflow-y-auto"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b">
-          <h2 className="text-xl font-semibold">Account</h2>
+        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b">
+          <h2 className="text-lg sm:text-xl font-semibold">Account</h2>
 
           <button
             onClick={() => setShow(false)}
@@ -118,9 +118,9 @@ if (!show) return null;
             <FaTimes />
           </button>
         </div>
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           {/* Sidebar */}
-          <div className="w-[220px] border-r bg-gray-50 min-h-[450px] p-4">
+          <div className="w-full md:w-[220px] border-b md:border-b-0 md:border-r bg-gray-50 md:min-h-[450px] p-4">
             <p className="text-sm text-gray-500 mb-4">
               Manage your account info.
             </p>
@@ -139,13 +139,13 @@ if (!show) return null;
           </div>
 
           {/* Content */}
-          <div className="flex-1 p-6">
-            <h3 className="text-lg font-semibold mb-6">
+          <div className="flex-1 p-4 sm:p-6">
+            <h3 className="text-lg font-semibold mb-4 sm:mb-6">
               Profile details
             </h3>
 
             {/* Profile */}
-            <div className="flex items-center justify-between border-b pb-5">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b pb-5">
               <div className="flex items-center gap-4">
                 <img width={'40px'} height={'40px'}
                   src={dp==""?"https://as1.ftcdn.net/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg":dp.startsWith("https://lh3.googleusercontent.com")?dp:`${axiosInstance.defaults.baseURL}/uploads/${dp}`}
@@ -239,9 +239,9 @@ if (!show) return null;
       </div>
 
       {/* Form */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
         
-        <div className="mb-6">
+        <div className="sm:col-span-2 mb-2">
                 <label className="text-sm text-gray-600">
                   Username
                 </label>

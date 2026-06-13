@@ -71,11 +71,11 @@ console.log(emailParams);
 };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6">
       <div className="w-full max-w-6xl bg-white rounded-xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
 
         {/* Left Side */}
-        <div className="p-10 border-r">
+        <div className="p-6 sm:p-10 md:border-r">
 
           {/* Header */}
           <div className="flex items-center gap-3 text-gray-500 mb-10">
@@ -95,7 +95,7 @@ console.log(emailParams);
              {booking?.carId.title}
             </h3>
 
-            <h1 className="text-5xl font-bold mt-2">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2">
              {amount}
             </h1>
           </div>
@@ -104,7 +104,7 @@ console.log(emailParams);
           
 
         {/* Right Side */}
-        <div className="p-10">
+        <div className="p-6 sm:p-10">
 
           {/* Link Button */}
           <button className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-md">

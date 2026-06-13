@@ -269,13 +269,13 @@ useEffect(() => {
 return(
   <>
    {/* hero */}
-   <section className='bg-gray-100 p-5'>
+   <section className='bg-gray-100 p-4 sm:p-5'>
     <div>
-      <h1 ref={headingRef} className='mt-20 text-5xl font-bold text-center'>Explore <span className='bg-gradient-to-r from-blue-600 to-white p-1 rounded-md'> Premium Vehicles</span> Available In Exciting <br/><span className='mt-5 block'>Destinations</span> </h1>
+      <h1 ref={headingRef} className='mt-10 sm:mt-20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center px-2'>Explore <span className='bg-gradient-to-r from-blue-600 to-white p-1 rounded-md'> Premium Vehicles</span> Available In Exciting <span className='mt-2 sm:mt-5 block'>Destinations</span> </h1>
       
       </div>
-      <div className='flex items-center justify-center mt-10'>
-      <form onSubmit={handleSearch} className='bg-white text-gray-500 rounded-md md:rounded-full px-6 md:pl-12 py-4 flex flex-col md:flex-row gap-4 lg:gap-x-8 max-w-md md:max-w-4xl ring-1 ring-slate-900/5 relative'>
+      <div className='flex items-center justify-center mt-6 sm:mt-10 px-2'>
+      <form onSubmit={handleSearch} className='bg-white text-gray-500 rounded-md md:rounded-full px-4 sm:px-6 md:pl-12 py-4 flex flex-col md:flex-row gap-4 lg:gap-x-8 w-full max-w-md md:max-w-4xl ring-1 ring-slate-900/5 relative'>
        <div>
         <div className='flex items-center'>
           <CiLocationOn className='text-xl'/>
@@ -300,15 +300,15 @@ return(
         <input value={dropOffDate}
   onChange={(e) => setDropOffDate(e.target.value)} type="date"  className='mt-3 w-full px-4 py-2 border border-gray-300 rounded-md outline-none ' />
        </div>
-       <button className="flex items-center justify-center bg-blue-600 text-white rounded-full px-6 py-2 h-12 min-w-[140px] gap-2 font-medium mt-4">
+       <button type="submit" className="flex items-center justify-center bg-blue-600 text-white rounded-full px-6 py-2 h-12 min-w-[140px] gap-2 font-medium mt-2 md:mt-4 md:self-center">
   <FaSearch className="text-lg" />
   <span>Search</span>
 </button>
       </form>
       
       </div>
-      <div className='mt-7'>
-        <img width={'1100px'} height={'1100px'} ref={carRef} src={homecar} alt="" />
+      <div className='mt-7 flex justify-center px-2'>
+        <img ref={carRef} src={homecar} alt="Premium rental car" className='w-full max-w-4xl mx-auto' />
       </div>
     
    </section>
@@ -317,12 +317,12 @@ return(
 {/* about */}
 
 <section ref={aboutRef}>
-        <div className='grid grid-cols-2 py-15 px-10 gap-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 py-8 sm:py-15 px-4 sm:px-6 lg:px-10 gap-8 lg:gap-5'>
           <div className='overflow-hidden'>
-          <p  ref={firstText} className='text-blue-600 font-bold text-2xl'>Your Reliable Ride Partner</p>
-          <p  ref={secondText} className='text-5xl font-bold mt-3'>Helping You Every Step Of The Way</p>
-          <p  ref={thirdText} className='mt-10'>Find reusable car with transparent pricing, verified inspections, flexible pricing and delivery options, and 24/7 customer support for a smooth rental or buying experience.</p>
-          <div className='grid grid-cols-2 mt-10 gap-5' >
+          <p  ref={firstText} className='text-blue-600 font-bold text-lg sm:text-2xl'>Your Reliable Ride Partner</p>
+          <p  ref={secondText} className='text-2xl sm:text-3xl lg:text-5xl font-bold mt-3'>Helping You Every Step Of The Way</p>
+          <p  ref={thirdText} className='mt-6 sm:mt-10 text-sm sm:text-base'>Find reusable car with transparent pricing, verified inspections, flexible pricing and delivery options, and 24/7 customer support for a smooth rental or buying experience.</p>
+          <div className='grid grid-cols-1 sm:grid-cols-2 mt-6 sm:mt-10 gap-4 sm:gap-5' >
              <div className='p-5 bg-amber-100 rounded-sm' ref={fourthText}>
               <p className='text-xl font-bold'>Quick Service</p>
               <p>Book in seconds with instant confirmations and flexible pickup options, so you get on the road fast without waiting.</p>
@@ -332,7 +332,7 @@ return(
               <p>Choose from economy to luxury models, regularly maintained and verified,giving you reliable performance and the perfect car for every trip. </p>
              </div>
           </div>
-          <div className='grid grid-cols-2 mt-5 gap-5 ' ref={sixthText}>
+          <div className='grid grid-cols-1 sm:grid-cols-2 mt-4 sm:mt-5 gap-4 sm:gap-5' ref={sixthText}>
             <div className='p-5 bg-blue-100 rounded-sm'>
               <p className='text-xl font-bold'>Transparent Pricing</p>
               <p>Upfront rates with no hidden fees, clear breakdowns for insurance and extras, so pricing stays predictable and easy to understand before booking.</p>
@@ -343,12 +343,12 @@ return(
             </div>
           </div>
           </div>
-          <div className='grid grid-cols-2 gap-5'>
-          <div className='mt-15 ' ref={eighthText}>
-            <img className='rounded-sm' src={bluecar} alt="" />
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5'>
+          <div className='mt-4 sm:mt-15' ref={eighthText}>
+            <img className='rounded-sm w-full' src={bluecar} alt="Blue car" />
           </div>
-          <div className='mt-40' ref={ninthText}>
-            <img className='rounded-sm' src={whitecar} alt="" />
+          <div className='mt-4 sm:mt-20 lg:mt-40' ref={ninthText}>
+            <img className='rounded-sm w-full' src={whitecar} alt="White car" />
           </div>
           </div>
 

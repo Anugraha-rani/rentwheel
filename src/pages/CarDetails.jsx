@@ -129,11 +129,11 @@ console.log(typeof carDetails?.isAvailable)
 
   return (
     
-     <div className="max-w-7xl mx-auto p-6">
+     <div className="max-w-7xl mx-auto p-4 sm:p-6">
       <div className="grid lg:grid-cols-2 gap-6">
 
         {/* LEFT SIDE */}
-        <div className="bg-white rounded-xl p-6 shadow-sm">
+        <div className="bg-white rounded-xl p-4 sm:p-6 shadow-sm order-2 lg:order-1">
           <div className='flex items-center'>
             <CiLocationOn className='me-2'/>
           <p className="text-gray-500 text-sm">
@@ -141,14 +141,14 @@ console.log(typeof carDetails?.isAvailable)
           </p>
           </div>
 
-          <div className="flex justify-between items-start mt-2">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mt-2">
             <div>
-              <h1 className="text-3xl font-bold">{carDetails?.title}</h1>
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">{carDetails?.title}</h1>
               <p className="text-sky-500 font-medium">
                 {carDetails?.bodyType}
               </p>
             </div>
-            <div className="text-right">
+            <div className="text-left sm:text-right">
               <h2 className="font-bold text-xl">
                 ₹{carDetails?.priceRent}/day
               </h2>
@@ -264,7 +264,7 @@ console.log(typeof carDetails?.isAvailable)
 }
 
           </div>
-          <div className="w-[320px] rounded-lg border mt-10 border-gray-200 bg-gray-100 p-4 shadow-sm">
+          <div className="w-full max-w-sm rounded-lg border mt-10 border-gray-200 bg-gray-100 p-4 shadow-sm">
       <h2 className="font-semibold text-gray-800 mb-3">
         For Buying Contact
       </h2>
@@ -333,9 +333,9 @@ console.log(typeof carDetails?.isAvailable)
           
 
         {/* RIGHT SIDE */}
-        <div>
+        <div className="order-1 lg:order-2">
          
-           <div className="bg-gray-100 rounded-xl h-[350px] flex items-center justify-center">
+           <div className="bg-gray-100 rounded-xl h-[220px] sm:h-[300px] lg:h-[350px] flex items-center justify-center">
             <img
               src={selectedImage}
               alt="car"
@@ -345,17 +345,17 @@ console.log(typeof carDetails?.isAvailable)
          
 
          
-        <div className="grid grid-cols-2 gap-3 mt-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-5">
   {getCarImageUrls(carDetails?.images || []).map((img, index) => (
     <div
       key={index}
       onClick={() => setSelectedImage(img)}
       className={`cursor-pointer rounded-xl overflow-hidden border-2 ${selectedImage === img? "border-sky-500": "border-transparent"}`}>
-      <div className='flex justify-center items-center'>
-      <img width={'200px'} height={'200px'}
+      <div className='flex justify-center items-center h-24 sm:h-32'>
+      <img
         src={img}
         alt=""
-        className=" object-cover"
+        className="w-full h-full object-cover"
       />
       </div>
     </div>

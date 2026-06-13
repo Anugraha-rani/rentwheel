@@ -75,9 +75,9 @@ const handleLogout = () => {
 
   return (
     <>
-    <section className=' px-1 shadow-lg'>
+    <section className='relative px-1 shadow-lg'>
       <div>
-<div className='flex items-center justify-center flex-between px-10'>
+<div className='flex items-center justify-between px-4 sm:px-6 lg:px-10 py-2'>
   {/* logo */}
   <div className='flex flex-1'>
     <Link to={'/'}>
@@ -94,7 +94,7 @@ const handleLogout = () => {
 
   {role === "admin" && (
     <Link
-      className={`${navLinkClass("/dashboard")} text-lg font-bold ms-3`}
+      className={`${navLinkClass("/dashboard")} hidden lg:block text-lg font-bold ms-3`}
       to='/admin'
     >
       Dashboard
@@ -178,11 +178,14 @@ const handleLogout = () => {
 
 {/* nav links */}
     
-    <div className={`${menuOpened?"flex":"hidden"} flex-col top-20 shadow-md absolute p-4 gap-4 lg:hidden z-50 py-6 bg-white`}>
-    <Link  className='font-bold text-lg ' to={'/'}>Home</Link>
-    <Link   className=' text-lg font-bold  ' to={'/lists'}>Lists</Link>
-    <Link   className=' text-lg font-bold  ' to={'/blog'}>Blog</Link>
-    <Link   className=' text-lg font-bold  ' to={'/contact'}>Contact</Link>
+    <div className={`${menuOpened?"flex":"hidden"} flex-col left-0 right-0 w-full top-full shadow-md absolute p-4 gap-4 lg:hidden z-50 py-6 bg-white`}>
+    <Link className='font-bold text-lg' to={'/'} onClick={() => setMenuOpened(false)}>Home</Link>
+    <Link className='text-lg font-bold' to={'/lists'} onClick={() => setMenuOpened(false)}>Lists</Link>
+    <Link className='text-lg font-bold' to={'/blog'} onClick={() => setMenuOpened(false)}>Blog</Link>
+    <Link className='text-lg font-bold' to={'/contact'} onClick={() => setMenuOpened(false)}>Contact</Link>
+    {role === "admin" && (
+      <Link className='text-lg font-bold' to='/admin' onClick={() => setMenuOpened(false)}>Dashboard</Link>
+    )}
   </div>
     
   </div>
